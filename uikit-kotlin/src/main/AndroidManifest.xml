@@ -16,8 +16,8 @@
         android:hardwareAccelerated="true"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
-        tools:node="merge"
-        tools:targetApi="R">
+        tools:node="merge">
+<!--        tools:targetApi="R">-->
 
         <activity android:name=".ui_components.chats.CometChatStartConversation" />
         <activity android:name=".ui_components.calls.call_manager.CometChatStartCallActivity"
@@ -62,7 +62,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui_components.messages.forward_message.CometChatForwardMessageActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 

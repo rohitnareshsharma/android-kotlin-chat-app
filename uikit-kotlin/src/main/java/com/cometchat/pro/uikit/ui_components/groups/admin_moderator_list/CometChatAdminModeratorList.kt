@@ -36,7 +36,7 @@ import com.cometchat.pro.uikit.ui_resources.utils.recycler_touch.ClickListener
 import com.cometchat.pro.uikit.ui_resources.utils.recycler_touch.RecyclerTouchListener
 import com.cometchat.pro.uikit.ui_resources.utils.FontUtils
 import com.cometchat.pro.uikit.ui_resources.utils.Utils
-import okhttp3.internal.Util
+
 import java.util.*
 
 /**
@@ -119,7 +119,7 @@ class CometChatAdminModeratorList : Fragment() {
                 if (showModerators) {
                     if (loggedInUserScope == CometChatConstants.SCOPE_ADMIN && groupMember.uid != loggedInUser.uid) {
                         if (activity != null) {
-                            val alertDialog = MaterialAlertDialogBuilder(activity)
+                            val alertDialog = MaterialAlertDialogBuilder(activity!!)
                             alertDialog.setTitle(resources.getString(R.string.remove))
                             alertDialog.setMessage(String.format(resources.getString(R.string.remove_as_moderator), groupMember.name))
                             alertDialog.setPositiveButton(resources.getString(R.string.yes)) { dialogInterface, i -> updateMemberScope(groupMember, var1) }
@@ -136,7 +136,7 @@ class CometChatAdminModeratorList : Fragment() {
                 } else {
                     if (ownerId != null && loggedInUser.uid == ownerId && loggedInUserScope == CometChatConstants.SCOPE_ADMIN && groupMember.uid != loggedInUser.uid) {
                         if (activity != null) {
-                            val alertDialog = MaterialAlertDialogBuilder(activity)
+                            val alertDialog = MaterialAlertDialogBuilder(activity!!)
                             alertDialog.setTitle(resources.getString(R.string.remove))
                             alertDialog.setMessage(String.format(resources.getString(R.string.remove_as_admin), groupMember.name))
                             alertDialog.setPositiveButton(resources.getString(R.string.yes)) { dialogInterface, i -> updateMemberScope(groupMember, var1) }

@@ -698,7 +698,7 @@ class CometChatThreadMessageList : Fragment(), View.OnClickListener, OnMessageLo
             fadeOut.repeatCount = 3
 
             fadeOut.addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator?) {
+                override fun onAnimationEnd(animation: Animator) {
                     imageView.visibility = View.GONE
                 }
             })
